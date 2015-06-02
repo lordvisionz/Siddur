@@ -17,6 +17,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *Maariv;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 @property (strong, nonatomic) IBOutlet UISlider *fontSlider;
-@property (strong, nonatomic) IBOutlet UIScrollView *davenScrollView;
+//@property (strong, nonatomic) IBOutlet UIScrollView *davenScrollView;
 
 @end

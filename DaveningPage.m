@@ -9,7 +9,7 @@
 #import "DaveningPage.h"
 
 @interface DaveningPage () <UITextViewDelegate>
-@property (strong,nonatomic) IBOutlet UILabel *daveningLabel;
+@property (strong,nonatomic) IBOutlet UITextView *daveningLabel;
 @end
 
 @implementation DaveningPage
@@ -18,8 +18,8 @@ NSAttributedString *string;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.davenScrollView.scrollEnabled = YES;
-	self.davenScrollView.contentInset = UIEdgeInsetsZero;
+	self.daveningLabel.scrollEnabled = YES;
+	self.daveningLabel.contentInset = UIEdgeInsetsZero;
 	string = [[NSAttributedString alloc]init];
 	
 	
@@ -84,7 +84,7 @@ NSAttributedString *string;
 	}
 	
 	[self.daveningLabel setAttributedText:string];
-	self.daveningLabel .numberOfLines = 0;
+//	self.daveningLabel .numberOfLines = 0;
 	self.daveningLabel.font = [self.daveningLabel.font fontWithSize:(long)fontSize];
 	NSLog(@"LENGTH = %ld",(long)self.daveningLabel.text.length);
 	

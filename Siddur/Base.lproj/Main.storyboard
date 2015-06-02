@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Dw-KB-JBL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Dw-KB-JBL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -192,33 +192,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnm-lD-h9Z">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnm-lD-h9Z" customClass="UITextView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xu-sm-spY">
-                                        <rect key="frame" x="8" y="0.0" width="359" height="504"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="304" id="pY3-yB-5l3"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="leading" secondItem="xnm-lD-h9Z" secondAttribute="leading" constant="8" id="K0T-Eo-2yC"/>
-                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="top" secondItem="xnm-lD-h9Z" secondAttribute="topMargin" constant="-8" id="Y62-DY-m0W"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Xu-sm-spY" secondAttribute="trailing" constant="8" id="asV-wg-SJr"/>
-                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="centerX" secondItem="xnm-lD-h9Z" secondAttribute="centerX" id="kbK-B5-HcF"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Xu-sm-spY" secondAttribute="bottom" id="tBE-qa-op1"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -244,8 +219,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="davenScrollView" destination="xnm-lD-h9Z" id="ybh-XD-eC3"/>
-                        <outlet property="daveningLabel" destination="8Xu-sm-spY" id="RwA-pb-rIW"/>
+                        <outlet property="daveningLabel" destination="xnm-lD-h9Z" id="eoY-Cf-mEJ"/>
                         <outlet property="fontSlider" destination="awF-qj-Hnr" id="MnW-0b-KLx"/>
                         <outlet property="searchButton" destination="yfm-iy-ghU" id="C3i-Q2-qze"/>
                     </connections>
