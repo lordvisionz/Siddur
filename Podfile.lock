@@ -1,0 +1,13 @@
+PODS:
+  - EDSunriseSet (1.0)
+  - iCarousel (1.8.1)
+
+DEPENDENCIES:
+  - EDSunriseSet (= 1.0)
+  - iCarousel (= 1.8.1)
+
+SPEC CHECKSUMS:
+  EDSunriseSet: bdc4760f496c8e6f9b9a727ffa645b6048aa2a09
+  iCarousel: dace1cb858e3f4dc2614bee3201041247f82feda
+
+COCOAPODS: 0.37.2
