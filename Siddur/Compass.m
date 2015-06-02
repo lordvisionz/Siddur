@@ -43,23 +43,38 @@
 		}else{
 			NSLog(@"OFF");
 			[self.gestureActivation setOn:NO animated:YES];
-
-		}
-
-});
-		self.eastLabel.alpha = .2;
-		NSLog(@"HELLO");
-		if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-				// Use one or the other, not both. Depending on what you put in info.plist
 			
-			[self.locationManager requestAlwaysAuthorization];
 		}
 		
-		self.locationManager = [[CLLocationManager alloc]init];
-		self.locationManager.delegate = self;
-		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-		[self.locationManager startUpdatingHeading];
-
+		BOOL first = [prefs boolForKey:@"first"];
+		
+		if(first){
+			
+		}else{
+			
+			if(self.gestureActivation.on){
+				
+				self.gestureLabel.text = @"Flip phone up to exit";
+				
+			}else{
+				
+				self.gestureLabel.text = @"Tap to exit";
+			}
+		}
+	});
+	self.eastLabel.alpha = .2;
+	NSLog(@"HELLO");
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+			// Use one or the other, not both. Depending on what you put in info.plist
+		
+		[self.locationManager requestAlwaysAuthorization];
+	}
+	
+	self.locationManager = [[CLLocationManager alloc]init];
+	self.locationManager.delegate = self;
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[self.locationManager startUpdatingHeading];
+	
 	[self startUpdating];
 	
 }
@@ -130,8 +145,8 @@
 	
 	if(first){
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gesture Activation"
-												 message:NSLocalizedString(  @"Place the phone face up to activate the compass.", @"This can be done anywhere in the app")
-							 delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Set", nil];
+												 message:NSLocalizedString( @"Place the phone face up to activate the compass.", @"This can be done anywhere in the app")
+							 delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		
 		
 		[alert show];

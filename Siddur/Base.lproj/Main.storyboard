@@ -189,28 +189,65 @@
                         <viewControllerLayoutGuide type="bottom" id="pJu-Tz-HrH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m3w-qd-K4D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4os-rF-c2r" customClass="PSPDFTextView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="478"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnm-lD-h9Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xu-sm-spY">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="504"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="304" id="pY3-yB-5l3"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="leading" secondItem="xnm-lD-h9Z" secondAttribute="leading" constant="8" id="K0T-Eo-2yC"/>
+                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="top" secondItem="xnm-lD-h9Z" secondAttribute="topMargin" constant="-8" id="Y62-DY-m0W"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Xu-sm-spY" secondAttribute="trailing" constant="8" id="asV-wg-SJr"/>
+                                    <constraint firstItem="8Xu-sm-spY" firstAttribute="centerX" secondItem="xnm-lD-h9Z" secondAttribute="centerX" id="kbK-B5-HcF"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Xu-sm-spY" secondAttribute="bottom" id="tBE-qa-op1"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pJu-Tz-HrH" firstAttribute="top" secondItem="4os-rF-c2r" secondAttribute="bottom" constant="26" id="K1x-g2-Fvd"/>
-                            <constraint firstItem="4os-rF-c2r" firstAttribute="leading" secondItem="m3w-qd-K4D" secondAttribute="leading" id="VGe-Gv-mFR"/>
-                            <constraint firstAttribute="trailing" secondItem="4os-rF-c2r" secondAttribute="trailing" id="dHV-xp-11L"/>
-                            <constraint firstItem="4os-rF-c2r" firstAttribute="top" secondItem="NCH-Ic-qjS" secondAttribute="bottom" id="dkt-h0-eKN"/>
+                            <constraint firstItem="xnm-lD-h9Z" firstAttribute="leading" secondItem="m3w-qd-K4D" secondAttribute="leading" id="2UN-RG-oVG"/>
+                            <constraint firstAttribute="bottom" secondItem="xnm-lD-h9Z" secondAttribute="bottom" id="5zX-xH-pdq"/>
+                            <constraint firstItem="xnm-lD-h9Z" firstAttribute="top" secondItem="NCH-Ic-qjS" secondAttribute="bottom" id="KEp-vY-r7y"/>
+                            <constraint firstAttribute="trailing" secondItem="xnm-lD-h9Z" secondAttribute="trailing" id="dtE-Kv-2rk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AIC-Sl-Ice"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationItem key="navigationItem" id="AIC-Sl-Ice">
+                        <nil key="title"/>
+                        <slider key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="8" maxValue="40" id="awF-qj-Hnr">
+                            <rect key="frame" x="8" y="7" width="316" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="maximumTrackTintColor" red="0.60209324050000002" green="0.60209324050000002" blue="0.60209324050000002" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="fontChange:" destination="srR-lP-xWA" eventType="valueChanged" id="dJV-LA-3yn"/>
+                            </connections>
+                        </slider>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="yfm-iy-ghU"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="Shacharit" destination="4os-rF-c2r" id="Oss-RE-DiA"/>
+                        <outlet property="davenScrollView" destination="xnm-lD-h9Z" id="ybh-XD-eC3"/>
+                        <outlet property="daveningLabel" destination="8Xu-sm-spY" id="RwA-pb-rIW"/>
+                        <outlet property="fontSlider" destination="awF-qj-Hnr" id="MnW-0b-KLx"/>
+                        <outlet property="searchButton" destination="yfm-iy-ghU" id="C3i-Q2-qze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nm-XV-gaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,11 +263,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.1743210311" green="0.21340928940000001" blue="0.6354025136" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="19"/>
-                            <color key="textColor" red="0.1743210311" green="0.21340928940000001" blue="0.6354025136" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -243,5 +280,5 @@
             <point key="canvasLocation" x="676" y="230"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.1743210311" green="0.21340928940000001" blue="0.6354025136" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -1,22 +1,27 @@
-//
-//  DaveningPage.m
-//  Siddur
-//
-//  Created by Ehud Adler on 2/17/15.
-//  Copyright (c) 2015 Ehud Adler. All rights reserved.
-//
+	//
+	//  DaveningPage.m
+	//  Siddur
+	//
+	//  Created by Ehud Adler on 2/17/15.
+	//  Copyright (c) 2015 Ehud Adler. All rights reserved.
+	//
 
 #import "DaveningPage.h"
 
 @interface DaveningPage () <UITextViewDelegate>
+@property (strong,nonatomic) IBOutlet UILabel *daveningLabel;
 @end
 
 @implementation DaveningPage
 long value;
-
-
+NSAttributedString *string;
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+	self.davenScrollView.scrollEnabled = YES;
+	self.davenScrollView.contentInset = UIEdgeInsetsZero;
+	string = [[NSAttributedString alloc]init];
+	
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(navUnhide)
@@ -30,28 +35,29 @@ long value;
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	value = [defaults integerForKey:@"Daven"];
 	self.navigationController.navigationBar.hidden = NO;
-
-
+	
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+		// Dispose of any resources that can be recreated.
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 - (void)viewWillAppear:(BOOL)animated {
-	self.Shacharit.editable = NO;
-	self.Shacharit.selectable = NO;
+	NSUserDefaults *prefs= [NSUserDefaults standardUserDefaults];
+	NSInteger fontSize = [prefs integerForKey:@"fontSize"];
+	NSLog(@"THE FONT SIZE HAS LOADED AS: %ld",(long)fontSize);
+	[self.fontSlider setValue:(long)fontSize animated:YES];
 	if((int)value == 0){
-		self.Shacharit.attributedText =
+		string =
 		[NSAttributedString.alloc
 		 initWithFileURL:[ NSBundle.mainBundle URLForResource:@"Shacharit" withExtension:@"rtf"  ]
 		 options:nil
@@ -59,7 +65,7 @@ long value;
 		 error:NULL
 		 ];
 	}else if((int)value == 1){
-		self.Shacharit.attributedText =
+		string =
 		[NSAttributedString.alloc
 		 initWithFileURL:[ NSBundle.mainBundle URLForResource:@"Mincha" withExtension:@"rtf"  ]
 		 options:nil
@@ -67,19 +73,24 @@ long value;
 		 error:NULL
 		 ];
 	}else if((int)value == 2){
-		self.Shacharit.attributedText =
+		string =
 		[NSAttributedString.alloc
 		 initWithFileURL:[ NSBundle.mainBundle URLForResource:@"Maariv" withExtension:@"rtf"  ]
 		 options:nil
 		 documentAttributes:nil
 		 error:NULL
 		 ];
+		
 	}
-
+	
+	[self.daveningLabel setAttributedText:string];
+	self.daveningLabel .numberOfLines = 0;
+	self.daveningLabel.font = [self.daveningLabel.font fontWithSize:(long)fontSize];
+	NSLog(@"LENGTH = %ld",(long)self.daveningLabel.text.length);
+	
+	
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-}
 
 -(BOOL)prefersStatusBarHidden{
 	return YES;
@@ -108,6 +119,17 @@ long value;
 }
 -(void)navUnhide{
 	self.navigationController.navigationBar.hidden = NO;
+	
+}
+- (IBAction)fontChange:(id)sender {
+	
+	NSUserDefaults *prefs= [NSUserDefaults standardUserDefaults];
+	[prefs setInteger:(long)self.fontSlider.value forKey:@"fontSize"];
+	[prefs synchronize];
+	
+	self.daveningLabel.font = [self.daveningLabel.font fontWithSize:(long)self.fontSlider.value];
+	
+	
 	
 }
 
