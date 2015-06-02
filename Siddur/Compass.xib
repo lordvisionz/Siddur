@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Compass">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsj-4a-aP7">
+                    <rect key="frame" x="1" y="161" width="320" height="248"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="North.png" translatesAutoresizingMaskIntoConstraints="NO" id="11f-4q-8pm">
+                            <rect key="frame" x="135" y="16" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="OLy-C2-wp3"/>
+                                <constraint firstAttribute="height" constant="50" id="xzH-XZ-D8v"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="South.png" translatesAutoresizingMaskIntoConstraints="NO" id="urJ-9q-tps">
+                            <rect key="frame" x="135" y="182" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Tic-fW-lij"/>
+                                <constraint firstAttribute="width" constant="50" id="mx9-gw-BET"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="East.png" translatesAutoresizingMaskIntoConstraints="NO" id="uhr-E7-wud">
+                            <rect key="frame" x="217" y="99" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="DHD-yF-qIa"/>
+                                <constraint firstAttribute="height" constant="50" id="dOC-Uq-j8I"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="West.png" translatesAutoresizingMaskIntoConstraints="NO" id="okO-bj-gxj">
+                            <rect key="frame" x="55" y="99" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="4em-HF-g7C"/>
+                                <constraint firstAttribute="height" constant="50" id="iAu-fp-SUw"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassRing.png" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-lV-9LT">
+                            <rect key="frame" x="43" y="6" width="235" height="235"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="235" id="OY0-EX-dPy"/>
+                                <constraint firstAttribute="width" constant="235" id="bFm-Ch-Ixi"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="bqm-lV-9LT" secondAttribute="centerX" constant="-0.5" id="iwX-0b-Wbs"/>
+                        <constraint firstAttribute="centerY" secondItem="bqm-lV-9LT" secondAttribute="centerY" constant="0.5" id="tc2-BW-NDV"/>
+                        <constraint firstAttribute="height" constant="248" id="uWV-ci-cUM"/>
+                        <constraint firstAttribute="width" constant="320" id="yxf-8T-HDP"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.19999999999999968" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מזרח" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK2-fK-S0l">
+                    <rect key="frame" x="42" y="42" width="238" height="119"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="238" id="Ej5-KD-XVz"/>
+                        <constraint firstAttribute="height" constant="119" id="aJ8-re-IHi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="115"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nB3-eE-G4V">
+                    <rect key="frame" x="263" y="529" width="51" height="31"/>
+                    <color key="onTintColor" red="1" green="1" blue="1" alpha="0.14000000000000001" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="onOffSwitch:" destination="iN0-l3-epB" eventType="valueChanged" id="0By-XV-s4y"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gesture Activation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-Pz-cpl">
+                    <rect key="frame" x="159" y="534" width="96" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="EmD-nX-VOp"/>
+                        <constraint firstAttribute="width" constant="96" id="f7B-9B-mBY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nB3-eE-G4V" secondAttribute="trailing" constant="8" id="JDm-b0-6JT"/>
+                <constraint firstAttribute="centerY" secondItem="fsj-4a-aP7" secondAttribute="centerY" constant="-1" id="bfW-qt-i8z"/>
+                <constraint firstAttribute="bottom" secondItem="nB3-eE-G4V" secondAttribute="bottom" constant="8" id="h4G-Yd-JSC"/>
+                <constraint firstAttribute="centerX" secondItem="xK2-fK-S0l" secondAttribute="centerX" constant="-1" id="l79-yA-tH9"/>
+                <constraint firstAttribute="centerX" secondItem="fsj-4a-aP7" secondAttribute="centerX" constant="-1" id="oJh-ZP-MyG"/>
+                <constraint firstAttribute="trailing" secondItem="RGo-Pz-cpl" secondAttribute="trailing" constant="65" id="sHO-il-5F4"/>
+                <constraint firstAttribute="bottom" secondItem="RGo-Pz-cpl" secondAttribute="bottom" constant="13" id="w9n-20-eyc"/>
+                <constraint firstAttribute="centerY" secondItem="xK2-fK-S0l" secondAttribute="centerY" constant="182.5" id="yc6-Sd-SSv"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="compassContainer" destination="fsj-4a-aP7" id="fYM-UN-3P4"/>
+                <outlet property="east" destination="uhr-E7-wud" id="Vmo-mg-iIq"/>
+                <outlet property="eastLabel" destination="xK2-fK-S0l" id="lKK-VD-MqF"/>
+                <outlet property="gestureActivation" destination="nB3-eE-G4V" id="QJg-G7-cfI"/>
+                <outlet property="gestureLabel" destination="RGo-Pz-cpl" id="4ps-LC-PM9"/>
+                <outlet property="north" destination="11f-4q-8pm" id="eJJ-bv-1I0"/>
+                <outlet property="south" destination="urJ-9q-tps" id="dE1-DO-tVc"/>
+                <outlet property="west" destination="okO-bj-gxj" id="h7Z-9m-Y0d"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="CompassRing.png" width="589" height="589"/>
+        <image name="East.png" width="121" height="152"/>
+        <image name="North.png" width="121" height="121"/>
+        <image name="South.png" width="121" height="121"/>
+        <image name="West.png" width="121" height="121"/>
+    </resources>
+</document>

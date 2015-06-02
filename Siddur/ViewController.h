@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iCarousel/iCarousel.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <iCarouselDataSource,iCarouselDelegate,UIAccelerometerDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *parshaToday;
+@property (strong, nonatomic) IBOutlet UILabel *holiday;
 
 @end
 
